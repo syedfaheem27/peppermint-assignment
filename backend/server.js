@@ -2,12 +2,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/user.routes");
 const dotenv = require("dotenv");
-const userModel = require("./models/user.model");
-const expenseModel = require("./models/expenses.model");
 
 dotenv.config({ path: `${__dirname}/.env` });
 
 const app = express();
+
+app.use(express.json());
 
 const DB_Conn = process.env.DB_CONN_STRING.replace(
   "<DB_USERNAME>",
