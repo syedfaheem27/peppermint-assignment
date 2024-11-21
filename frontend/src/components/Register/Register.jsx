@@ -3,7 +3,7 @@ import styles from './Register.module.css'
 import { Link } from 'react-router-dom'
 
 function Register() {
-    const [phone, setPhone] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [confirmPassword, setConfirmPassword] = useState("");
 
@@ -21,15 +21,15 @@ function Register() {
             <h2 className={styles.heading}>Login</h2>
             <form onSubmit={handleSubmit} className={styles['login-page']}>
                 <div className={styles.comp}>
-                    <label htmlFor="phone" >
-                        Phone Number
+                    <label htmlFor="username" >
+                        UserName
                     </label>
                     <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
+                        type="text"
+                        id="username"
+                        name="username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                         placeholder="Enter your phone number"
                         required
                     />
@@ -56,8 +56,8 @@ function Register() {
                         type="password"
                         id="confirm-password"
                         name="confirm-password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
+                        value={confirmPassword}
+                        onChange={(e) => setConfirmPassword(e.target.value)}
                         placeholder="Cofirm your password"
                         required
                     />

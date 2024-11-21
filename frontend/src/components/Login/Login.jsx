@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from './Login.module.css'
 import { Link } from 'react-router-dom'
 function LogIn() {
-    const [phone, setPhone] = useState("");
+    const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = (e) => {
@@ -18,15 +18,15 @@ function LogIn() {
             <h2 className={styles.heading}>Login</h2>
             <form onSubmit={handleSubmit} className={styles['login-page']}>
                 <div className={styles.comp}>
-                    <label htmlFor="phone" >
-                        Phone Number
+                    <label htmlFor="username" >
+                        UserName
                     </label>
                     <input
                         type="tel"
-                        id="phone"
-                        name="phone"
-                        value={phone}
-                        onChange={(e) => setPhone(e.target.value)}
+                        id="username"
+                        name="username"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
                         placeholder="Enter your phone number"
                         required
                     />
