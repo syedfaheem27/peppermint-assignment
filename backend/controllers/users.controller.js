@@ -10,7 +10,7 @@ exports.getAllUsers = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(400).json({
+    res.status(500).json({
       status: "fail",
       message: err,
     });
@@ -28,7 +28,7 @@ exports.addUser = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(400).json({
+    res.status(500).json({
       status: "fail",
       message: err,
     });
@@ -47,7 +47,7 @@ exports.getUser = async (req, res) => {
       },
     });
   } catch (err) {
-    res.status(400).json({
+    res.status(500).json({
       status: "fail",
       message: err,
     });
