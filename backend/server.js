@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const userRouter = require("./routes/user.routes");
 const dotenv = require("dotenv");
 const userModel = require("./models/user.model");
+const expenseModel = require("./models/expenses.model");
 
 dotenv.config({ path: `${__dirname}/.env` });
 
