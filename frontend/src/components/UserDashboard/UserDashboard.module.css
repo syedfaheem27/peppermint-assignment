@@ -1,29 +1,31 @@
-.container {
-  max-width: 670px;
+.main {
+  max-width: 976px;
   margin: 0 auto;
-  overflow: hidden;
-  padding: 1em 2em;
+  display: flex;
+  padding: 3em;
+  justify-content: center;
+  align-items: center;
   background-color: beige;
 }
-.heading {
-  text-align: center;
-}
-
-.login-form {
+.form {
   display: flex;
   flex-direction: column;
-  gap: 2em;
+  gap: 1em;
+  max-width: 576px;
+  width: 100%;
 }
 
 .comp {
-  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+.comp label {
+  font-weight: bold;
 }
 .comp input {
-  width: 100%;
-  padding: 0.5em;
-  margin-top: 0.25em;
+  padding: 0.45em 1em;
 }
-
 .submit {
   padding: 0.5rem;
   font-size: 1rem;
@@ -36,7 +38,4 @@
 .submit:hover {
   background-color: #4caf4f96;
   color: #1c1c1c9f;
-}
-.redirect {
-  margin-top: 1em;
 }

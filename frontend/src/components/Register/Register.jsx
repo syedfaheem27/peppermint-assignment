@@ -49,13 +49,13 @@ function Register() {
                     />
                 </div>
                 <div className={styles.comp}>
-                    <label htmlFor="confirm-password" >
+                    <label htmlFor="confirmPassword" >
                         Confirm Password
                     </label>
                     <input
                         type="password"
-                        id="confirm-password"
-                        name="confirm-password"
+                        id="confirmPassword"
+                        name="confirmPassword"
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                         placeholder="Cofirm your password"
