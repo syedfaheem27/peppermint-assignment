@@ -1,9 +1,12 @@
 import { useState } from "react";
-import styles from './Login.module.css'
+import styles from './Register.module.css'
 import { Link } from 'react-router-dom'
-function LogIn() {
+
+function Register() {
     const [phone, setPhone] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -45,17 +48,31 @@ function LogIn() {
                         required
                     />
                 </div>
+                <div className={styles.comp}>
+                    <label htmlFor="confirm-password" >
+                        Confirm Password
+                    </label>
+                    <input
+                        type="password"
+                        id="confirm-password"
+                        name="confirm-password"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        placeholder="Cofirm your password"
+                        required
+                    />
+                </div>
                 <button type="submit" className={styles.submit}>
-                    Login
+                    Register
                 </button>
             </form>
 
             <div className={styles.redirect}>
-                Don't have an account? &nbsp;
-                <Link to="/register">Register</Link>
+                Already have an account? &nbsp;
+                <Link to="/login">Login</Link>
             </div>
         </section>
     );
 }
 
-export default LogIn;
+export default Register;

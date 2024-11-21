@@ -1,6 +1,5 @@
 import './App.css'
-import LoginPage from './components/Login/Login'
-
+import { Outlet } from 'react-router-dom'
 function App() {
 
   return (
@@ -11,7 +10,7 @@ function App() {
         </h1>
       </header>
       <main>
-        <LoginPage />
+        <Outlet />
       </main>
     </>
   )
