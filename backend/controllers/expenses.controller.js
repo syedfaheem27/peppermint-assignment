@@ -2,22 +2,20 @@ const Expense = require("../models/expenses.model");
 
 exports.addExpense = async (req, res) => {
   try {
-    if (!req.params.userId)
+    if (!req.params.userId || !req.user)
       return res.status(400).json({
         status: "fail",
         message: "No User Id found",
       });
 
-    if (!user)
-      return res.status(401).json({
-        status: "fail",
-        message: "Not authenticated",
-      });
-
-    const expense = Expense.create({
-      ...req.body,
-      userId: req.params.userId,
+    const expense = await Expense.create({
+      amount: req.body.amount,
+      name: req.body.name,
+      description: req.body.description ?? "",
+      userId: req.user._id,
     });
+
+    console.log(expense);
 
     res.status(201).json({
       status: "success",

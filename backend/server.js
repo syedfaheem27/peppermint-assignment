@@ -29,4 +29,4 @@ mongoose
   });
 
 app.use("/api/v1/users", userRouter);
-app.use("/api/v1/expense", userRouter);
+app.use("/api/v1/expense", expenseRouter);

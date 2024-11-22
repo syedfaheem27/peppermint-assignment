@@ -60,7 +60,7 @@ exports.isLoggedIn = async (req, res, next) => {
       process.env.JWT_SECRET_KEY
     );
 
-    const user = await User.findOne({ username: decoded.username });
+    const user = await User.findOne({ username: decoded.username.username });
 
     if (!user) {
       return res.status(401).json({
@@ -70,13 +70,7 @@ exports.isLoggedIn = async (req, res, next) => {
     }
 
     req.user = user;
-
-    res.status(200).json({
-      status: "success",
-      data: {
-        user,
-      },
-    });
+    next();
   } catch (err) {
     res.status(500).json({
       status: "fail",
