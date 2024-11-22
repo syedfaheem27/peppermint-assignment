@@ -2,7 +2,11 @@ const Expense = require("../models/expenses.model");
 
 exports.addExpense = async (req, res) => {
   try {
-    const user = req.user;
+    if (!req.params.userId)
+      return res.status(400).json({
+        status: "fail",
+        message: "No User Id found",
+      });
 
     if (!user)
       return res.status(401).json({
@@ -12,7 +16,7 @@ exports.addExpense = async (req, res) => {
 
     const expense = Expense.create({
       ...req.body,
-      userId: user._id,
+      userId: req.params.userId,
     });
 
     res.status(201).json({
@@ -31,7 +35,13 @@ exports.addExpense = async (req, res) => {
 
 exports.getExpenseForUser = async (req, res) => {
   try {
-    const expenses = await Expense.findOne({ userId: req.user._id });
+    if (!req.params.userId)
+      return res.status(400).json({
+        status: "fail",
+        message: "No User Id found",
+      });
+
+    const expenses = await Expense.findOne({ userId: req.params.userId });
 
     res.status(200).json({
       status: "success",

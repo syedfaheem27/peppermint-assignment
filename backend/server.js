@@ -1,6 +1,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const userRouter = require("./routes/user.routes");
+const expenseRouter = require("./routes/expense.routes");
+
 const dotenv = require("dotenv");
 
 dotenv.config({ path: `${__dirname}/.env` });
@@ -27,3 +29,4 @@ mongoose
   });
 
 app.use("/api/v1/users", userRouter);
+app.use("/api/v1/expense", userRouter);
